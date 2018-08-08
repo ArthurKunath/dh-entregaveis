@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 30px;
+                font-size: 84px;
             }
 
             .links > a {
@@ -79,48 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  <ol>
-                    @if (count($errors) > 0)
-                      <div class="alert alert-danger">
-                          <ul>
-                            @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                            @endforeach
-                          </ul>
-                      </div>
+                    Laravel
+                </div>
 
-                    @endif
-
-                    @if (isset($sucesso) && $sucesso)
-                      Filme cadastrado com sucesso!
-                    @endif
-
-                    @if (isset($ocorreuErro) && $ocorreuErro)
-                      OPS! Ocorreu erro!
-                    @endif
-
-                    <form method="post" action="/adicionar">
-                      {{csrf_field()}}
-                      <div class="form-group col-6 m-auto">
-                          <label for="title">Título</label>
-                          <input type="text" class="form-control" name="title" value="{{old('title')}}"/>
-                      </div>
-                      <div class="form-group col-6 m-auto">
-                          <label for="rating">Classificação</label>
-                        <input type="text" class="form-control" name="rating" value="{{old('rating')}}"/>
-                      </div>
-                      <div class="form-group col-6 m-auto">
-                          <label for="awards">Prêmios</label>
-                          <input type="text" class="form-control" name="awards" value="{{old('awards')}}"/>
-                      </div>
-                      <div class="form-group col-6 m-auto">
-                          <label for="length">Duração</label>
-                          <input type="text" class="form-control" name="length" value="{{old('length')}}"/>
-                      </div>
-
-                      <button type='submit'>Enviar</button>
-                    <form>
-                  </ol>
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

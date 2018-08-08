@@ -15,6 +15,13 @@ Route::get('form', 'FormController@form');
 
 Route::post('/adicionar', 'FormController@adicionar');
 
+Route::get('/form', 'FormController@exibirFilmes');
+
+Route::get('/filme/edit/{id}', 'FormController@editForm');
+Route::put('/filme/edit/{id}', 'FormController@update');
+Route::delete('/filme/edit/{id}', 'FormController@delete');
+
+
 Route::get('/actors', 'actorsController@add');
 
 Route::post('/actors/add', 'actorsController@add');
