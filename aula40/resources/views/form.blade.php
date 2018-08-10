@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 30px;
             }
 
             .links > a {
@@ -88,18 +88,38 @@
                             @endforeach
                           </ul>
                       </div>
-                    @endif
-                    <form method="post" action="/actors/exibirAtores">
-                      {{csrf_field()}}
 
-                      <input name="last_name" />
-                      <input name="rating"/>
+                    @endif
+
+                    @if (isset($sucesso) && $sucesso)
+                      Filme cadastrado com sucesso!
+                    @endif
+
+                    @if (isset($ocorreuErro) && $ocorreuErro)
+                      OPS! Ocorreu erro!
+                    @endif
+
+                    <form method="post" action="/adicionar">
+                      {{csrf_field()}}
+                      <div class="form-group col-6 m-auto">
+                          <label for="title">Título</label>
+                          <input type="text" class="form-control" name="title" value="{{old('title')}}"/>
+                      </div>
+                      <div class="form-group col-6 m-auto">
+                          <label for="rating">Classificação</label>
+                        <input type="text" class="form-control" name="rating" value="{{old('rating')}}"/>
+                      </div>
+                      <div class="form-group col-6 m-auto">
+                          <label for="awards">Prêmios</label>
+                          <input type="text" class="form-control" name="awards" value="{{old('awards')}}"/>
+                      </div>
+                      <div class="form-group col-6 m-auto">
+                          <label for="length">Duração</label>
+                          <input type="text" class="form-control" name="length" value="{{old('length')}}"/>
+                      </div>
 
                       <button type='submit'>Enviar</button>
                     <form>
-                      @foreach($actors as $banana)
-                       {{ $banana->first_name . " " . $banana->last_name}} 
-                     @endforeach
                   </ol>
                 </div>
             </div>

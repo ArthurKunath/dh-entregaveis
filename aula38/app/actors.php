@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class actors extends Model
 {
-  protected $atores = "actors";
+  protected $table = "actors";
 
-  protected $fillable = ['last_name', 'rating'];
+  protected $fillable = ['last_name', 'first_name'];
 }

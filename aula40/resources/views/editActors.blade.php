@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 20px;
             }
 
             .links > a {
@@ -89,17 +89,20 @@
                           </ul>
                       </div>
                     @endif
-                    <form method="post" action="/actors/exibirAtores">
+                    <form method="post" action="/actors/add">
                       {{csrf_field()}}
 
-                      <input name="last_name" />
-                      <input name="rating"/>
+                      <div class="form-group col-6 m-auto">
+                          <label for="first_name">Nome</label>
+                          <input type="text" class="form-control" name="first_name" value="{{old('first_name')}}"/>
+                      </div>
+                      <div class="form-group col-6 m-auto">
+                          <label for="last_name">Sobrenome</label>
+                        <input type="text" class="form-control" name="last_name" value="{{old('last_name')}}"/>
+                      </div>
 
                       <button type='submit'>Enviar</button>
                     <form>
-                      @foreach($actors as $banana)
-                       {{ $banana->first_name . " " . $banana->last_name}} 
-                     @endforeach
                   </ol>
                 </div>
             </div>

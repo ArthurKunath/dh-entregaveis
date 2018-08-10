@@ -79,28 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  <ol>
-                    @if (count($errors) > 0)
-                      <div class="alert alert-danger">
-                          <ul>
-                            @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                            @endforeach
-                          </ul>
-                      </div>
-                    @endif
-                    <form method="post" action="/actors/exibirAtores">
-                      {{csrf_field()}}
+                    Laravel
+                </div>
 
-                      <input name="last_name" />
-                      <input name="rating"/>
-
-                      <button type='submit'>Enviar</button>
-                    <form>
-                      @foreach($actors as $banana)
-                       {{ $banana->first_name . " " . $banana->last_name}} 
-                     @endforeach
-                  </ol>
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
