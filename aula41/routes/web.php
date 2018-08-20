@@ -11,6 +11,9 @@
 |
 */
 
+/*
+Filmes
+*/
 Route::get('form', 'FormController@form');
 
 Route::post('/adicionar', 'FormController@adicionar');
@@ -22,11 +25,24 @@ Route::put('/filme/edit/{id}', 'FormController@update');
 Route::delete('/filme/edit/{id}', 'FormController@delete');
 
 
-
+/*
+Atores
+*/
 Route::get('/actors', 'actorsController@exibirAtores');
 
 Route::get('/adicionar1', 'actorsController@adicionar1');
 
+Route::post('/adicionar1', 'actorsController@adicionar1');
+
 Route::post('/actors/add', 'actorsController@add');
 
 Route::get('/formActors', 'actorsController@exibirAtores');
+
+/*
+Genero
+*/
+Route::get('/genre', 'genreController@exibirGeneros');
+
+Route::get('/genre/{id}', 'genreController@show');
+
+Route::put('/genre/{id}', 'genreController@editGenre');
