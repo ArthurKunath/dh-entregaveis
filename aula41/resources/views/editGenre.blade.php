@@ -34,5 +34,5 @@
       <input type="text" class="form-control" name="length" value="{{ $filme->length }}"/>
   </div>
 
-  <button type='submit'>Atualizar filme</button>
+  <button type='submit'>Atualizar Genero</button>
 <form>
