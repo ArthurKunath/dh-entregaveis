@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+
+    <script>
+      window.onload = function() {
+        alert("Pagina carregada!");
+      };
+    </script>
+    <script>
+      let nome = prompt("Insira seu nome");
+
+      alert('Bem vindo ' + nome + '!');
+
+    </script>
+    <script>
+      let maior = confirm ("Você é maior de idade?");
+
+      if(maior !== true) {
+        window.location = "http://www.disney.com.br/";
+      }
+
+    </script>
+    <script>
+      let endereco = window.location.href
+      console.log(endereco)
+
+    </script>
+
+  </body>
+</html>

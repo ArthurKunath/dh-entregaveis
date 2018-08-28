@@ -28,7 +28,7 @@ class FilmesController extends Controller
     public function store(Request $request, $id)
     {
         $filme = Filmes::find($id);
-        $filme->title = $request->title;
+        $filme->title = $request->input(title);
         $filme->save();
     }
 
