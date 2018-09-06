@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //let​ objetoEmFormatoJSON ​=​ ​'​{​"atributo"​:​ ​"valor"​,​ ​"atributo1"​:​ ​1​,​ ​"atributo2"​:​ ​[], "atributo3"​:​
+//null​,​ ​"atributo4"​:​ ​false​ ​}'​;
+      let respostaDaAPI = '{"propriedade1": "Banana"}'
+      let objetoExercicio1 = JSON.parse(respostaDaAPI)
+
+      let enviarEssesDados = {
+        nome: document.querySelector('#nome').value,
+        idade: document.querySelector('#idade').value,
+      }
+
+      let amigos = '{"numero": "7"}'
+
+
+
+    </script>
+      <form>
+        <select name="Paises" id = "selectPaises"></select>
+      </form>
+
+    <script type="text/javascript">
+
+
+    let xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        let resposta = JSON.parse(xmlhttp.responseText)
+        let respostaEmArray = Object.entries(resposta.contenido)
+
+        respostaEmArray.forEach(function(item) {
+          let pais = item[0]
+          let id = item[1]
+        })
+      }
+    };
+
+      xmlhttp.open("GET", "http://pilote.techo.org/?do=api.getPaises", true);
+      xmlhttp.send();
+
+
+
+    </script>
+  </body>
+</html>
